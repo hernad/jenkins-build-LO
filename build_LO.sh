@@ -1,10 +1,8 @@
 #!/bin/bash
 
-echo "hello world build LO"
+cd /cygdrive/e/LO
 
-cd /cygdrive/f/LO
-
-export LO_HOME=/cygdrive/f/LO
+export LO_HOME=/cygdrive/e/LO
 export LODE_HOME=$LO_HOME/lode
 export PATH=$LODE_HOME/opt/bin:$PATH
 
