@@ -1,5 +1,10 @@
 #!/bin/bash
 
+BRANCH=master
+DATE="Mar 9 2017"
+
+#BRANCH=libreoffice-5-3
+
 cd /cygdrive/e/LO
 
 export LO_HOME=/cygdrive/e/LO
@@ -15,16 +20,19 @@ BUILD_HOST="greenbox-5 vagrant W7-PRO"
 
 cd $LO_HOME/libo-core
 
-#BRANCH=master
-#BRANCH=libreoffice-5-3
-BRANCH=`git rev-list -1 --before="Mar 9 2017" master`
+git checkout -f $BRANCH
 
 if [ $INIT == 1 ] ; then
-   git fetch
-   echo === git checkout -f $BRANCH ==
-   git checkout -f $BRANCH
+   git pull
    #git pull
 fi
+
+
+
+echo "BRANCH - git rev-list -1 --before="$DATE" $BRANCH"
+COMMIT=`git rev-list -1 --before="$DATE" $BRANCH`
+echo === git checkout -f $COMMIT ==
+git checkout -f $COMMIT
 
 perl  -i.original -pe 's/find_msms$/echo no_find_sms/sg'  configure.ac
 
