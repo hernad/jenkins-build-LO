@@ -5,9 +5,14 @@ BRANCH=libreoffice-5-3
 BUILD_HOST="greenbox-5 vagrant W7-vs2013" 
 BUILD_ID="hernad $BUILD_HOST"
 
-cd /cygdrive/e/LO
 
-export LO_HOME=/cygdrive/e/LO
+# windows drive letter for attached disk e:\
+DRIVE_LETTER=e
+
+[ -d /cygdrive/$DRIVE_LETTER ] || DRIVE_LETTER=g
+
+cd /cygdrive/$DRIVE_LETTER/LO
+export LO_HOME=/cygdrive/$DRIVE_LETTER/LO
 export LODE_HOME=$LO_HOME/lode
 export PATH=$LODE_HOME/opt/bin:$PATH
 
