@@ -76,3 +76,10 @@ perl  -i.original -pe 'BEGIN{undef $/;} s/^\$\(call gb_CppunitTest_get_target.*C
 [ $INIT == 1 ] && $LODE_HOME/opt/bin/make clean
 
 $LODE_HOME/opt/bin/make
+
+
+mv instdir LO
+tar -cvzf LO.tar.gz LO
+cp LO.tar.gz //vboxsrv/vagrant/
+rm LO.tar.gz
+
