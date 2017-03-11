@@ -6,7 +6,7 @@
 # backwards compatibility). Please don't change it unless you know what
 # you're doing.
 Vagrant.configure("2") do |config|
-  config.vm.box = "W7-vs2015"
+  config.vm.box = "W7-vs2013"
 
   config.persistent_storage.enabled = true
   config.persistent_storage.location = "./data.vmdk"

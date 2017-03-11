@@ -1,9 +1,9 @@
 #!/bin/bash
 
-BRANCH=master
 DATE="Mar 31 2017"
-
-#BRANCH=libreoffice-5-3
+BRANCH=libreoffice-5-3
+BUILD_HOST="greenbox-5 vagrant W7-vs2013" 
+BUILD_ID="hernad $BUILD_HOST"
 
 cd /cygdrive/e/LO
 
@@ -16,7 +16,6 @@ echo $PATH
 INIT=0
 [ "$1" == "--init" ] && INIT=1
 
-BUILD_HOST="greenbox-5 vagrant W7-PRO" 
 
 cd $LO_HOME/libo-core
 
@@ -58,7 +57,7 @@ perl  -i.original -pe 's/find_msms$/echo no_find_sms/sg'  configure.ac
     --enable-release-build \
     --disable-online-update \
     --with-build-version="Built by hernad"  --with-vendor="bring.out" \
-    --with-extra-buildid="hernad $BUILD_HOST visual studio 2013-cygwin"  \
+    --with-extra-buildid="$BUILD_ID" \
     --with-product-name="LO" \
     --with-locales="bs en" \
    --enable-pch --disable-ccache --disable-activex --disable-atl \
