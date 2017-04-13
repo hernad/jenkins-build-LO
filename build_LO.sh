@@ -70,7 +70,7 @@ perl  -i.original -pe 's/find_msms$/echo no_find_sms/sg'  configure.ac
     --with-extra-buildid="hernad $BUILD_HOST visual studio 2013-cygwin"  \
     --with-product-name="LO" \
     --with-locales="bs en" \
-   --enable-pch --disable-ccache --disable-activex --disable-atl \
+   --enable-pch --disable-ccache \
    --with-lang="bs en-US" 
 
 
