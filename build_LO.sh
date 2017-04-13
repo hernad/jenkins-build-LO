@@ -25,6 +25,8 @@ INIT=0
 
 BUILD_HOST="greenbox-5 vagrant W7-PRO" 
 
+[ -d $LO_HOME/core ] && echo "old file structure LO/core -> LO/libo-core" && mv $LO_HOME/core $LO_HOME/libo-core
+
 cd $LO_HOME/libo-core
 
 git checkout -f $BRANCH
