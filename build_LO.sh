@@ -1,6 +1,5 @@
 #!/bin/bash
 
-DATE="Mar 31 2017"
 BRANCH=libreoffice-5-3
 BUILD_HOST="greenbox-5 vagrant W7-vs2013" 
 BUILD_ID="hernad $BUILD_HOST"
@@ -33,10 +32,7 @@ fi
 
 
 
-echo "BRANCH - git rev-list -1 --before="$DATE" $BRANCH"
-COMMIT=`git rev-list -1 --before="$DATE" $BRANCH`
-echo === git checkout -f $COMMIT ==
-git checkout -f $COMMIT
+git checkout -f
 
 perl  -i.original -pe 's/find_msms$/echo no_find_sms/sg'  configure.ac
 
