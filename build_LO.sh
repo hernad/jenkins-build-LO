@@ -7,9 +7,9 @@ DATE="Apr 13 2017"
 
 ls -ld /cygdrive/*
 
-[ -d /cygdrive/e ] && LETTER=e
-[ -d /cygdrive/f ] && LETTER=f
-[ -d /cygdrive/g ] && LETTER=g
+[ -d /cygdrive/e/LO ] && LETTER=e
+[ -d /cygdrive/f/LO ] && LETTER=f
+[ -d /cygdrive/g/LO ] && LETTER=g
 
 export LO_HOME=/cygdrive/$LETTER/LO
 
