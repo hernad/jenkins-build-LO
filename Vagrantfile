@@ -9,7 +9,7 @@ Vagrant.configure("2") do |config|
   config.vm.box = "W7-vs2015"
 
   config.persistent_storage.enabled = true
-  config.persistent_storage.location = "./data.vmdk"
+  config.persistent_storage.location = "./data_LO-build.vdi"
 
   config.vm.provider "virtualbox" do |vb|
      vb.memory = "4096"
