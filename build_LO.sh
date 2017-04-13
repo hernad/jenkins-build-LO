@@ -5,9 +5,16 @@ DATE="Apr 13 2017"
 
 #BRANCH=libreoffice-5-3
 
-cd /cygdrive/e/LO
+ls -ld /cygdrive/*
 
-export LO_HOME=/cygdrive/e/LO
+[ -d /cygdrive/e ] && LETTER=e
+[ -d /cygdrive/f ] && LETTER=f
+[ -d /cygdrive/g ] && LETTER=g
+
+export LO_HOME=/cygdrive/$LETTER/LO
+
+[ ! -d $LO_HOME ] && echo "$LO_HOME not exists!" && exit 1
+
 export LODE_HOME=$LO_HOME/lode
 export PATH=$LODE_HOME/opt/bin:$PATH
 
