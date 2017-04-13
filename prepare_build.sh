@@ -1,10 +1,11 @@
 #!/bin/bash
 
 SRC=/home/docker/data_core_base_windows.vmdk
+DST=data_LO-build.vdi
 
-if [ ! -f data.vdi ] ;  then
-  /opt/VirtualBox/VBoxManage clonemedium $SRC data_LO-build.vdi
+if [ ! -f $DST ] ;  then
+  /opt/VirtualBox/VBoxManage clonemedium $SRC $DST
 else
-	echo "data_LO-build.vdi already exists"
+   echo "$DST already exists"
 fi
 
