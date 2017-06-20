@@ -4,7 +4,6 @@ BRANCH=libreoffice-5-3
 BUILD_HOST="greenbox-5 vagrant W7-vs2013" 
 BUILD_ID="hernad $BUILD_HOST"
 
-
 # windows drive letter for attached disk e:\
 DRIVE_LETTER=e
 
@@ -62,7 +61,8 @@ perl  -i.original -pe 's/find_msms$/echo no_find_sms/sg'  configure.ac
     --with-product-name="LO" \
     --with-locales="bs en" \
    --enable-pch --disable-ccache --disable-activex --disable-atl \
-   --with-lang="bs en-US" 
+   --with-lang="bs en-US"  \
+   --with-windows-sdk=7.1A
 
 
 # CXXFLAGS="/wd4702"   \
