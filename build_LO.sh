@@ -48,7 +48,7 @@ perl  -i.original -pe 's/find_msms$/echo no_find_sms/sg'  configure.ac
 #    --without-help --without-myspell-dicts --disable-sdremote --disable-online-update --without-galleries \
 #    --with-build-version="Built by hernad"  --with-vendor="bring.out" \
 #    --with-extra-buildid="hernad $BUILD_HOST visual studio 2013-cygwin"  \
-#    --with-product-name="LO" CXXFLAGS="/wd4702"   \
+#    --with-product-name="LO"  \
 #    --with-locales="bs en" \
 #    --enable-pch --disable-ccache --disable-activex --disable-atl \
 #    --with-lang="bs en-US" 
@@ -59,7 +59,7 @@ perl  -i.original -pe 's/find_msms$/echo no_find_sms/sg'  configure.ac
     --disable-online-update \
     --with-build-version="Built by hernad"  --with-vendor="bring.out" \
     --with-extra-buildid="$BUILD_ID" \
-    --with-product-name="LO" \
+    --with-product-name="LO" CXXFLAGS="/wd4702 /wd2220 /wd4995"  \
     --with-locales="bs en" \
    --enable-pch --disable-ccache --disable-activex --disable-atl \
    --with-lang="bs en-US"  \
