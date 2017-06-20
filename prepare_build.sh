@@ -14,7 +14,7 @@ if [ ! -f $DATA_HDD ] ; then
     echo "erasing old VM $VM"
     VBoxManage unregistervm $VM --delete
   else
-    echo "no old VM LO-windows"
+    echo "no old VM $WORKSPACE"
   fi
 
   HDD=`VBoxManage list hdds -l | grep "Location.*workspace/${WORKSPACE}/${DATA_HDD}" -B7 | grep "^UUID:" | awk '{print $2}'`
@@ -29,4 +29,4 @@ fi
 
 [ -f $DATA_HDD_BASE ]  || VBoxManage createmedium --size 20000 --format $DATA_HDD_FORMAT --filename $DATA_HDD_BASE
 
-[ -f data.vdi ] || VBoxManage clonemedium $DATA_HDD_BASE $DATA_HDD
+[ -f $DATA_HDD ] || VBoxManage clonemedium $DATA_HDD_BASE $DATA_HDD
