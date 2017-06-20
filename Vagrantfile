@@ -16,6 +16,6 @@ Vagrant.configure("2") do |config|
      vb.memory = "2048"
   end
 
-  config.vm.provision "shell", path: "build_LO.sh"
+  config.vm.provision "shell", privileged: false, path: "build_LO.sh"
 
 end

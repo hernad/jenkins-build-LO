@@ -24,6 +24,8 @@ sudo apt-get -y build-dep libreoffice
 
 sudo mkdir -p /data
 sudo mount /dev/sdb1 /data
+cd /data
+sudo chown -R vagrant LO
 cd /data/LO/core
 git checkout -f $BRANCH
 git pull
