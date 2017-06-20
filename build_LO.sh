@@ -5,9 +5,10 @@ BUILD_HOST="greenbox-5 vagrant"
 BUILD_ID="hernad $BUILD_HOST"
 LO_TAR_GZ=LO_ubuntu_12.04_i386.tar.gz
 
+sudo apt-get update -y
+udo apt-get install -y software-properties-common python-software-properties
 
 sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
-sudo apt-get update -y
 sudo apt-get update -y
 sudo apt-get install -y gcc-4.9 g++-4.9
 sudo update-alternatives --remove-all gcc 
