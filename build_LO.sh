@@ -19,7 +19,7 @@ sudo update-alternatives --config gcc
 sudo update-alternatives --config g++
 gcc --version
 
-sudo apt-get -y install phonon-backend-gstreamer git
+sudo apt-get -y install phonon-backend-gstreamer build-essential git
 sudo apt-get -y build-dep libreoffice
 
 sudo mkdir -p /data
@@ -34,7 +34,15 @@ git checkout -f
 
 #perl  -i.original -pe 's/find_msms$/echo no_find_sms/sg'  configure.ac
 
-./autogen.sh --without-doxygen --disable-gtk3 --disable-gstreamer-1-0
+./autogen.sh --without-doxygen --disable-gtk3 --disable-gstreamer-1-0 \
+    --disable-firebird-sdbc \
+    --enable-release-build \
+    --disable-online-update \
+    --with-build-version="Built by hernad"  --with-vendor="bring.out" \
+    --with-extra-buildid="$BUILD_ID" \
+    --with-product-name="LO" \
+    --with-locales="bs en" \
+    --with-lang="bs en-US"
 
 # tests off
 #perl   -i.original -pe 'BEGIN{undef $/;} s/^\$\(call gb.*Cppunit \$\*\)\)\)\)$/\t\@echo notestnotest/smg'  solenv/gbuild/CppunitTest.mk
@@ -48,7 +56,7 @@ git checkout -f
 
 perl  -i.original -pe 'BEGIN{undef $/;} s/^\$\(call gb_CppunitTest_get_target.*Cppunit \$\*\){3,5}$/\t\@echo notestnotest/smg'  solenv/gbuild/CppunitTest.mk
 
-make
+/usr/bin/make
 
 mv instdir LO
 tar -cvzf $LO_TAR_GZ LO
