@@ -6,13 +6,16 @@
 # backwards compatibility). Please don't change it unless you know what
 # you're doing.
 Vagrant.configure("2") do |config|
-  config.vm.box = "W7-vs2013"
+
+ config.vm.box = "ubuntu-12.04-i386"
 
   config.persistent_storage.enabled = true
-  config.persistent_storage.location = "./data.vmdk"
+  config.persistent_storage.location = "./data.vdi"
 
   config.vm.provider "virtualbox" do |vb|
-     vb.memory = "4096"
+     vb.memory = "2048"
   end
+
+  config.vm.provision "shell", path: "build.sh"
 
 end
