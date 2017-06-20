@@ -59,7 +59,7 @@ perl  -i.original -pe 's/find_msms$/echo no_find_sms/sg'  configure.ac
     --disable-online-update \
     --with-build-version="Built by hernad"  --with-vendor="bring.out" \
     --with-extra-buildid="$BUILD_ID" \
-    --with-product-name="LO" CXXFLAGS="/wd4702 /wd2220 /wd4995"  \
+    --with-product-name="LO" CXXFLAGS="/wd4702 /wd4999 /wd4995"  \
     --with-locales="bs en" \
    --enable-pch --disable-ccache --disable-activex --disable-atl \
    --with-lang="bs en-US"  \
