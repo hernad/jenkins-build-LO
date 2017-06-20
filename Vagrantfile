@@ -10,7 +10,7 @@ Vagrant.configure("2") do |config|
  config.vm.box = "ubuntu-12.04-i386"
 
   config.persistent_storage.enabled = true
-  config.persistent_storage.location = "./data.vdi"
+  config.persistent_storage.location = "./data.vmdk"
 
   config.vm.provider "virtualbox" do |vb|
      vb.memory = "2048"
