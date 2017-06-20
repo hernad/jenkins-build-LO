@@ -19,6 +19,9 @@ sudo update-alternatives --config gcc
 sudo update-alternatives --config g++
 gcc --version
 
+sudo apt-get -y build-dep libreoffice
+sudo apt-get -y install git
+
 sudo mkdir -p /data
 sudo mount /dev/sdb1 /data
 cd /data/LO/core
