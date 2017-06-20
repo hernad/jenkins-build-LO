@@ -1,5 +1,6 @@
 #!/bin/bash
 
+LO_TAR_GZ=LO_Windows_5-3.tar.gz
 BRANCH=libreoffice-5-3
 BUILD_HOST="greenbox-5 vagrant W7-vs2013" 
 BUILD_ID="hernad $BUILD_HOST"
@@ -84,10 +85,12 @@ perl  -i.original -pe 'BEGIN{undef $/;} s/^\$\(call gb_CppunitTest_get_target.*C
 [ $INIT == 1 ] && $LODE_HOME/opt/bin/make clean
 
 $LODE_HOME/opt/bin/make
+$LODE_HOME/opt/bin/make sw.all
+$LODE_HOME/opt/bin/make sc.all
 
-
+rm -rf LO
 mv instdir LO
-tar -cvzf LO.tar.gz LO
-cp LO.tar.gz //vboxsrv/vagrant/
+tar -cvzf $LO_TAR_GZ LO
+cp $LO_TAR_GZ //vboxsrv/vagrant/
 rm LO.tar.gz
 
