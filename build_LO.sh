@@ -20,7 +20,7 @@ INIT=0
 [ "$1" == "--init" ] && INIT=1
 
 
-cd $LO_HOME/libo-core
+cd $LO_HOME/core
 
 git checkout -f $BRANCH
 
