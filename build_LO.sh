@@ -19,11 +19,11 @@ sudo update-alternatives --config gcc
 sudo update-alternatives --config g++
 gcc --version
 
-
+sudo mkdir -p /data
+sudo mount /dev/sdb1 /data
 cd /data/LO/core
 git checkout -f $BRANCH
 git pull
-
 
 git checkout -f
 
