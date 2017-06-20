@@ -2,7 +2,7 @@
 
 PATH=/opt/VirtualBox:$PATH
 
-WORKSPACE=LO-linux-i386
+WORKSPACE=LO-linux-ubuntu-12.04-i386
 DATA_HDD_BASE=~/data_core_linux.vmdk
 DATA_HDD=data.vmdk
 DATA_HDD_TYPE=VMDK
