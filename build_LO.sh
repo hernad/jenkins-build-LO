@@ -85,8 +85,8 @@ perl  -i.original -pe 'BEGIN{undef $/;} s/^\$\(call gb_CppunitTest_get_target.*C
 [ $INIT == 1 ] && $LODE_HOME/opt/bin/make clean
 
 $LODE_HOME/opt/bin/make
-$LODE_HOME/opt/bin/make sw.all
-$LODE_HOME/opt/bin/make sc.all
+#$LODE_HOME/opt/bin/make sw.all
+#$LODE_HOME/opt/bin/make sc.all
 
 rm -rf LO
 mv instdir LO

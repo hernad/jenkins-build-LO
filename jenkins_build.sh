@@ -7,13 +7,15 @@ export PATH=$PATH:/opt/vagrant/bin
 export PATH=$PATH:/opt/java/bin:
 export PATH=$PATH:/opt/green/bin
 
+LO_TAR_GZ=LO_Windows_5-3.tar.gz
+
 uname -a
 echo pwd=`pwd`
 #cd jenkins-build-LO
 
 ./prepare_build.sh
 
-[ -f LO.tar.gz ] && rm LO.tar.gz
+[ -f $LO_TAR_GZ ] && rm $LO_TAR_GZ
 
 vagrant --version
 vagrant up
@@ -21,8 +23,8 @@ vagrant provision
 vagrant halt
 
 
-if [ ! -f LO.tar.gz ] ; then
-   echo "LO.tar.gz not created ?!"
+if [ ! -f $LO_TAR_GZ ] ; then
+   echo "$LO_TAR_GZ not created ?!"
    exit 1
 fi
 
